@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FulpTube+
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.7
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.fulptube.org/*
@@ -67,18 +67,8 @@ No channels found
       </ul><hr class="guide-section-separator subscriptions-text-holder">
       <h2 id="channels-fo-yo">Subscriptions</h2>`);
 $addStyle('.html5-volume-panel {display:none !important}');
-if (window.location.href.includes('channel?n=')) {
+if (window.location.href.includes('channel') && window.location.href.includes('?n=')) {
      $addStyle(`#footer-hh-container {display:none !important}
-p#padding {color:transparent !important}
-body #footer-hh-container2 {
-    background-color: #f2f2f2!important;
-    border-top: 1px solid #e2e2e2;
-}`);
-$addElement('#footer-hh-container','<p id="padding">2</p><p id="padding">2</p>');
-
-}
-if (window.location.href.includes('channels')) {
-    $addStyle(`#footer-hh-container {display:none !important}
 p#padding {color:transparent !important}
 body #footer-hh-container2 {
     background-color: #f2f2f2!important;
